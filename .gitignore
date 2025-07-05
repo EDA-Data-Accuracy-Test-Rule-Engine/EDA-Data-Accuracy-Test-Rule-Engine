@@ -192,3 +192,47 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# EDA Rule Engine specific
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+test.db
+
+# Configuration files with sensitive data
+.eda-config.yaml
+config.yaml
+*.env.local
+
+# Rule engine outputs
+reports/
+outputs/
+*.html
+*.json
+results/
+
+# Sample data (if contains sensitive information)
+# Uncomment if your sample data should not be committed
+# sample_data.sql
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Database connection files
+connections.yaml
+
+# Log files
+*.log
+logs/
+
+# macOS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

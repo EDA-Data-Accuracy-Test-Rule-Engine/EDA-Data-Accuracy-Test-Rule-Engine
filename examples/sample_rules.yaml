@@ -1,0 +1,52 @@
+# Example rules configuration for EDA Rule Engine
+
+# Value Range Rule Example
+value_range_example:
+  name: "validate_customer_age"
+  type: "value_range"
+  table: "customers"
+  column: "age"
+  parameters:
+    min_value: 18
+    max_value: 120
+  description: "Validate customer age is between 18 and 120"
+  tags: ["customers", "age_validation"]
+
+# Email Template Rule Example  
+email_template_example:
+  name: "validate_email_format"
+  type: "value_template"
+  table: "customers"
+  column: "email"
+  parameters:
+    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  description: "Validate email format using regex"
+  tags: ["customers", "email_validation"]
+
+# Statistical Comparison Example
+statistical_comparison_example:
+  name: "sales_total_consistency"
+  type: "statistical_comparison"
+  table: "orders"
+  column: "total_amount"
+  parameters:
+    operation: "SUM"
+    compare_table: "order_items"
+    compare_column: "line_total"
+    threshold: 0.01  # 1% tolerance
+  description: "Compare order totals with sum of line items"
+  tags: ["orders", "financial_validation"]
+
+# Cross Table Comparison Example
+cross_table_example:
+  name: "inventory_consistency"
+  type: "cross_table_comparison"
+  table: "products"
+  column: "stock_quantity"
+  parameters:
+    compare_table: "inventory_log"
+    compare_column: "current_stock"
+    join_key: "product_id"
+    operation: "SUM"
+  description: "Verify product stock matches inventory log"
+  tags: ["inventory", "consistency_check"]

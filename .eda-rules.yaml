@@ -1,0 +1,75 @@
+0fe7f800:
+  config:
+    column: email
+    parameters:
+      column: email
+      pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+      table: users
+    rule_type: value_template
+    table: users
+  created_at: '2025-07-05T10:47:02.312693'
+  description: Test email validation
+  id: 0fe7f800
+  last_run: '2025-07-05T10:56:32.875248'
+  name: test_email_rule
+  rule_type: value_template
+  status: active
+  tags: []
+  updated_at: '2025-07-05T10:47:02.312696'
+1352a00f:
+  config:
+    column: total_amount
+    parameters:
+      column: total_amount
+      table: orders
+    rule_type: cross_table_comparison
+    table: orders
+  created_at: '2025-07-05T10:53:03.287993'
+  description: Compare order totals with sum of line items
+  id: 1352a00f
+  last_run: null
+  name: orders_consistency
+  rule_type: cross_table_comparison
+  status: active
+  tags: []
+  updated_at: '2025-07-05T10:53:03.287996'
+544f1831:
+  config:
+    column: age
+    parameters:
+      column: age
+      max_value: 120.0
+      min_value: 18.0
+      table: users
+    rule_type: value_range
+    table: users
+  created_at: '2025-07-05T10:52:00.188155'
+  description: Validate user age between 18-120
+  id: 544f1831
+  last_run: '2025-07-05T10:56:51.595016'
+  name: validate_age
+  rule_type: value_range
+  status: active
+  tags: []
+  updated_at: '2025-07-05T10:52:00.188159'
+56916bd7:
+  config:
+    column: total_amount
+    parameters:
+      column: total_amount
+      compare_column: line_total
+      compare_table: order_items
+      join_key: order_id
+      operation: SUM
+      table: orders
+    rule_type: cross_table_comparison
+    table: orders
+  created_at: '2025-07-05T10:54:03.913779'
+  description: Compare order totals with sum of line items v2
+  id: 56916bd7
+  last_run: '2025-07-05T10:56:51.794660'
+  name: orders_consistency_v2
+  rule_type: cross_table_comparison
+  status: active
+  tags: []
+  updated_at: '2025-07-05T10:54:03.913782'
